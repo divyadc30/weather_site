@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  overflow: hidden;
+  color: white;
+}
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.6);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 15px;
+  flex-wrap: wrap;
+  animation: slideFade 1s ease-in-out;
+  text-align: center;
+}
+
+.emoji-logo {
+  font-size: 60px;
+  animation: spinDrop 3s ease infinite;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.7));
+}
+
+.title-text h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px rgba(0,255,255,0.3);
+}
+
+.title-text p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-top: 5px;
+}
+
+.container {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+#searchBar {
+  padding: 14px 20px;
+  border-radius: 40px;
+  border: none;
+  width: 70%;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  transition: 0.3s ease;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+#searchBar::placeholder {
+  color: #ccc;
+}
+
+#searchBar:focus {
+  box-shadow: 0 0 8px #00ffe7;
+  border: 1px solid #00ffe7;
+}
+
+#searchBtn {
+  padding: 14px 16px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+#searchBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+.weatherInfo {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: inline-block;
+  max-width: 90%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.weatherInfo h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.weatherInfo p {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #f0f0f0;
+}
+
+.weatherInfo img {
+  width: 90px;
+  margin-top: 12px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spinDrop {
+  0% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(10deg) translateY(5px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .title-text h1 {
+    font-size: 2rem;
+  }
+
+  #searchBar {
+    width: 100%;
+  }
+
+  .weatherInfo {
+    padding: 20px;
+  }
+
+  .weatherInfo h2 {
+    font-size: 20px;
+  }
+
+  .weatherInfo img {
+    width: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    top: 24%;
+  }
+
+  .title-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .title-text p {
+    font-size: 0.85rem;
+  }
+
+  #searchBar {
+    font-size: 14px;
+  }
+
+  #searchBtn {
+    font-size: 14px;
+  }
+
+  .weatherInfo p {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+
